@@ -1,0 +1,83 @@
+
+  :root {
+    --roxo: #5356C2;
+    --lilas: #5879CC;
+    --azul-escuro: #568AB4;
+    --azul-medio: #58B6CC;
+    --azul-claro: #53C2B9;
+  }
+
+  body {
+    background-color: #568AB4;
+    font-family: 'Ubuntu', sans-serif;
+  }
+  
+  /* header */
+
+  .site-navbar {
+    margin-top: 2rem;
+  }
+
+  .menu {
+    background-color: beige;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    padding: .8rem 1rem;
+    background-color: rgba(255,255,255,.4);
+    border-radius: .4rem;
+    color: #fff;
+  }
+
+  .menu a:link,
+  .menu a:visited,
+  .menu a:active,
+  .menu a:hover {
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .menu-link {
+    display: inline;
+    margin: 0 1rem;
+  }
+
+  .site-logo {
+    margin-left: .6rem;
+  }
+
+  .menu-link > a {
+    margin: 0 .4rem;
+  }
+
+  .a3 {
+    padding-right: .5rem;
+  }
+
+  /* footer */
+
+.footer-container {
+  margin-bottom: 1rem;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.icons > a {
+  margin: .8rem;
+}
+
+.card-icons {
+  border: 0;
+  background-color: rgba(255,255,255,.4);
+  
+}
+
+.oi {
+  margin-left: 1rem;
+}
+
+
