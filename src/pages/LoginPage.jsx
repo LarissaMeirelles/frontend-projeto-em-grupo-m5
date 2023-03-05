@@ -1,7 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { AuthContext } from '../contexts/auth'
 
-import './LoginPage.css'
 
 function LoginPage() {
     const { authenticated, login } = useContext(AuthContext)
