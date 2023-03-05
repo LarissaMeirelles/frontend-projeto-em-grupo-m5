@@ -17,7 +17,7 @@ export const AuthProvider = ({children})=> {
         const recoveredUser = cookie.getCookie('user')
     
         if (recoveredUser) {
-            setUser(JSON.parse(recoveredUser));
+            setUser(recoveredUser);
         }
     
         setLoading(false)
