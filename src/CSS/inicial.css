@@ -1,0 +1,33 @@
+
+.sobre{ background-color: rgb(250, 250, 250);
+  background: linear-gradient(90deg, #5356c2 0%, #58b6cc 62%, #53c2b9 100%);
+  color: #fcfcfc;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  max-height: 1500px;
+  height: 100%;
+  padding-bottom: 2%;
+ 
+}
+.button_sobre{
+  background-color: #53c2b9;
+  border-radius: 0%;
+  border: #5356c2;
+ 
+}
+.rodape{
+  margin-top: 100px;
+}
+.button_sobre:hover{
+  background-color: rgba(86,186,169,1) ;
+}
+a.visited{
+  color: white;
+}
+a{
+  color: white;
+  text-decoration: none;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
