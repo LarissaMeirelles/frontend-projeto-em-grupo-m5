@@ -1,9 +1,13 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
+import BarChart from '../components/BarChart'
 import { AuthContext } from '../contexts/auth'
-AuthContext
+import Extract from '../components/Extract'
+import { UserData } from '../components/Data'
+
 
 function HomePage() {
-  const { authenticated, logout } = useContext(AuthContext)
+  const { logout } = useContext(AuthContext)
+
 
 
   const handleLogout = () => {
@@ -13,7 +17,6 @@ function HomePage() {
   return (
     <>
     <h1>HomePage</h1>
-    <p>{String(authenticated)}</p>
     <button onClick={handleLogout}>Logout</button>
     </>
 

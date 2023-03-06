@@ -19,9 +19,10 @@ function ListUsers() {
     const token = cookie.getCookie('token');
     api.defaults.headers.Authorization = `Bearer ${token}`;
 
-    const response = await getUsers();
+    
+    const response = await getUsers(token);
     setUsers(response.data.result);
-
+    console.log(response)
 
     setLoading(false);
     })()

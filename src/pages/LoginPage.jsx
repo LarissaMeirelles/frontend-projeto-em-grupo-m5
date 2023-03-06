@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { AuthContext } from '../contexts/auth'
-
+import Register from './Register'
 
 function LoginPage() {
     const { authenticated, login } = useContext(AuthContext)
@@ -34,6 +34,7 @@ function LoginPage() {
                 <button type="submit">Entrar</button>
             </div>
         </form>
+        <Register />
     </div>
   )
 }

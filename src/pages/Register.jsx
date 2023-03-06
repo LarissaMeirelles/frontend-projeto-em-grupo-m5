@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { api } from '../axios/api';
-import '../src/register.css'
+import '../css/register.css'
 
 
 function Register() {
@@ -10,9 +10,9 @@ function Register() {
     const [email, setEmail] = useState('');
     const [birth, setBirth] = useState('');
     const [telephone, setTelephone] = useState('');
-    const [gender, setGender] = useState('Prefiro não informar');
+    const [gender, setGender] = useState('prefiro não informar');
     const [address, setAddress] = useState('');
-    const [income, setIncome] = useState('');
+    const [income, setIncome] = useState();
     const [password, setPassword] = useState('');
 
     const fetchUsers = async (e) => {
@@ -30,6 +30,8 @@ function Register() {
                 renda: income,
                 senha: password,
             });
+
+            console.log(response)
             console.log(response.data); // ou exibir um feedback ao usuário
         } catch (error) {
             console.log(error);
@@ -39,6 +41,7 @@ function Register() {
         }
 
     };
+
 
     if(loading){
         return <div className="loading">Carregando...</div>
@@ -89,7 +92,7 @@ function Register() {
                                                                 <div className="form-group">
                                                                     <label htmlFor="inputEstado">Gênero</label>
                                                                     <select id="inputEstado" className="form-control" onChange={(e) => setGender(e.target.value)} value="Prefiro não informar">
-                                                                        <option value='Prefiro não informar'> Prefiro não informar </option>
+                                                                        <option value='Prefiro não informar'>prefiro não informar</option>
                                                                         <option value="fem">Feminino</option>
                                                                         <option value="masc">Masculino</option>
                                                                     </select>
