@@ -1,0 +1,39 @@
+.dropdown {
+    color: #5356c2;
+}
+
+.dropdown-item:hover{
+    color: #ffff;
+    background-color: #5879cc;
+    transition: 0.5s;
+    
+}
+
+#logout{
+    color: #e61e1e;
+    
+}
+
+#logout:hover{
+    color: #ffff;
+    background-color: #e61e1e;
+    transition: 0.5s;
+    
+}
+
+
+.botao:hover{
+
+background-color: #5879cc;
+transition: 0.5s;
+
+}
+
+.botao {
+    background-color: #5356c2;
+}
+
+.img-responsive {
+    width: 100%;
+    max-width: 200px;
+}
