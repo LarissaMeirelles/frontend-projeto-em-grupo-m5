@@ -27,6 +27,9 @@ $ npm install
 $ npm run dev
 ```
 
+## Repositório do back-end do projeto:
+https://github.com/LarissaMeirelles/Projeto-Resilia-M5
+
 ## 👨‍💻 Tecnologias utilizadas:
 - HTML;
 - CSS;
