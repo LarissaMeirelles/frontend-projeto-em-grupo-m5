@@ -4,7 +4,7 @@ import cookie from '../axios/function'
 import { api, createSession } from '../axios/api'
 
 
-export const AuthContext = createContext()
+export const AuthContext = createContext("")
 
 export const AuthProvider = ({children})=> {
 
@@ -40,7 +40,7 @@ export const AuthProvider = ({children})=> {
  
         
         setUser(loggedUser)
-        navigate("/")
+        navigate("/user")
     }
 
     const logout = () => {
@@ -52,7 +52,7 @@ export const AuthProvider = ({children})=> {
         api.defaults.headers.Authorization = null
 
         setUser(null)
-        navigate("/login")
+        navigate("/")
     }
 
 

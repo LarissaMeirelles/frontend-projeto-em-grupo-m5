@@ -1,42 +1,58 @@
-import React, { useState, useContext } from 'react'
-import { AuthContext } from '../contexts/auth'
-import Register from './Register'
+import { useState, useContext } from "react"
+import { AuthContext } from "../contexts/auth"
+import Register from "./Register"
+
 
 function LoginPage() {
     const { authenticated, login } = useContext(AuthContext)
 
-    const [ email, setEmail ] = useState("")
-    const [ password, setPassword] = useState("")
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
 
 
-    const handleSubmit = (e)=>{
+    const handleSubmit = (e) => {
         e.preventDefault()
 
-        console.log("submit", {email, password})
-        
+        console.log("submit", { email, password })
+
         login(email, password)
     }
 
-  return (
-    <div id="login">
-        <h1 className="title">Login de sistema</h1>
-        <p>{String(authenticated)}</p>
-        <form action="" className="form" onSubmit={handleSubmit}>
-            <div className="field">
-                <label htmlFor="email">Email</label>
-                <input type="email" name="email" id="email" value={email} onChange={(e)=> setEmail(e.target.value)}/>
+    return (
+        <>
+            <div className="lgp-hd">
+                <h2><strong>Faça seu login aqui!</strong></h2>
             </div>
-            <div className="field">
-                <label htmlFor="password">password</label>
-                <input type="password" name="password" id="password" value={password} onChange={(e)=> setPassword(e.target.value)}/>
+            <div className="container login-cont">
+                <div className="row">
+                    <div className="col">
+                        <section className="login-clean">
+                            
+                            <form action="" onSubmit={handleSubmit}>
+                                <h2 className="sr-only">Sign in</h2>
+                                <div className="illustration">
+                                    <i className="icon ion-calculator"></i>
+                                </div>
+                                <a className="forgot" href="register.html"></a>
+                                <div className="form-group">
+                                    <input className="form-control" type="email" name="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                                </div>
+                                <div className="form-group">
+                                    <input className="form-control" type="password" name="password" placeholder="********" value={password} onChange={(e) => setPassword(e.target.value)} />
+                                </div>
+                                <a className="forgot mt-2 mb-2" data-toggle="" style={{cursor: "pointer", fontSize: '13px'}}>Esqueceu sua senha?</a>
+                                <div className="form-group">
+                                    <button className="btn btn-primary btn-block mt-3" type="submit">Acessar</button>
+                                </div>
+                            </form>
+                            <Register />
+                        </section>
+                    </div>
+                </div>
             </div>
-            <div className="actions">
-                <button type="submit">Entrar</button>
-            </div>
-        </form>
-        <Register />
-    </div>
-  )
+        </>
+
+    )
 }
 
-export default LoginPage
+export default LoginPage;

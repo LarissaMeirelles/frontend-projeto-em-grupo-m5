@@ -7,10 +7,10 @@ import {
 } from 'react-router-dom'
 
 import HomePage from './pages/HomePage'
-import LoginPage from './pages/LoginPage'
 
 import { AuthProvider, AuthContext } from './contexts/auth'
 import ListUsers from './pages/ListUsers'
+import Home from './pages/Home'
 
 
 function AppRoutes() {
@@ -24,7 +24,7 @@ function AppRoutes() {
 
 
         if(!authenticated){
-            return <Navigate to="/login" />
+            return <Navigate to="/" />
         }
 
         return children
@@ -37,8 +37,8 @@ function AppRoutes() {
     <Router>
         <AuthProvider>
          <Routes>
-                <Route exact path='/login' element= {<LoginPage />} />
-                <Route exact path='/' element= {<Private> <HomePage /> </Private>} />
+                <Route exact path='/' element= {<Home />} />
+                <Route exact path='/user' element= {<Private> <HomePage /> </Private>} />
                 <Route path='/users' element= {<Private> <ListUsers /> </Private>} />
             </Routes>
         </AuthProvider>
