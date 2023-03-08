@@ -6,15 +6,15 @@ import '../css/register.css'
 function Register() {
 
     const [loading, setLoading] = useState(false);
-    const [name, setName] = useState('');
+    const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
-    const [birth, setBirth] = useState('');
-    const [telephone, setTelephone] = useState('');
-    const [gender, setGender] = useState('prefiro não informar');
-    const [address, setAddress] = useState('');
-    const [income, setIncome] = useState();
-    const [password, setPassword] = useState('');
-    const [submitted, setSubmitted] = useState(false); 
+    const [nascimento, setNascimento] = useState('');
+    const [telefone, setTelefone] = useState('');
+    const [genero, setGenero] = useState('prefiro não informar');
+    const [endereco, setEndereco] = useState('');
+    const [renda, setRenda] = useState();
+    const [senha, setSenha] = useState('');
+
     const navigate = useNavigate()
 
     const fetchUsers = async (e) => {
@@ -23,17 +23,9 @@ function Register() {
         setLoading(true);
 
         try {
-            const response = await api.post('/register', {
-                nome: name,
-                email,
-                data_nascimento: birth,
-                telefone: telephone,
-                genero: gender,
-                endereco: address,
-                renda: income,
-                senha: password,
-            });
-            setSubmitted(true);
+            const post = { nome, email, nascimento, telefone, genero, endereco, renda, senha }
+            
+            const response = await api.post('/register', post);
             console.log(response)
         } catch (error) {
             console.log(error);
@@ -51,9 +43,6 @@ function Register() {
     return (
 
         <div className="form-row">
-
-        {submitted && <div className="success-message">Cadastro realizado com sucesso</div>}
-
             <a className="forgot mt-3" data-toggle="modal" data-target="#modalCadastro" style={{ cursor: "pointer", fontSize: "15px" }}>
                 Cadastre-se
             </a>
@@ -88,15 +77,15 @@ function Register() {
                                                                 <form onSubmit={fetchUsers} style={{ width: "100%", padding: "30px" }}>
                                                                     <div className="form-group ">
                                                                         <label >Nome completo</label>
-                                                                        <input type="text" className="form-control" id="exampleInputtext" onChange={(e) => setName(e.target.value)} />
+                                                                        <input type="text" className="form-control" id="exampleInputtext" onChange={(e) => setNome(e.target.value)} />
                                                                     </div>
                                                                     <div className="form-group">
                                                                         <label>Data de nascimento</label>
-                                                                        <input type="date" className="form-control" id="exampleInputdate" onChange={(e) => setBirth(e.target.value)} />
+                                                                        <input type="date" className="form-control" id="exampleInputdate" onChange={(e) => setNascimento(e.target.value)} />
                                                                     </div>
                                                                     <div className="form-group">
                                                                         <label htmlFor="inputEstado">Gênero</label>
-                                                                        <select id="inputEstado" className="form-control" onChange={(e) => setGender(e.target.value)}>
+                                                                        <select id="inputEstado" className="form-control" onChange={(e) => setGenero(e.target.value)}>
                                                                             <option value='Prefiro não informar'>prefiro não informar</option>
                                                                             <option value="fem">feminino</option>
                                                                             <option value="masc">masculino</option>
@@ -107,7 +96,7 @@ function Register() {
                                                                         <div className="input-group-prepend" style={{ display: 'flex', justifyContent: "center", alignItems: "center", marginRight: '5px' }}>
                                                                             <div className="input-group-text">R$</div>
                                                                         </div>
-                                                                        <input type="text" className="form-control" id="inlineFormInputGroupUsername2" placeholder="Sua Renda" onChange={(e) => setIncome(e.target.value)} />
+                                                                        <input type="text" className="form-control" id="inlineFormInputGroupUsername2" placeholder="Sua Renda" onChange={(e) => setRenda(e.target.value)} />
                                                                     </div>
                                                                     <div className="form-group">
                                                                         <label>Endereço de Email</label>
@@ -115,17 +104,17 @@ function Register() {
                                                                     </div>
                                                                     <div className="form-group">
                                                                         <label htmlFor="exampleInputtext1">Telefone</label>
-                                                                        <input type="text" className="form-control" id="exampleInputtext1" onChange={(e) => setTelephone(e.target.value)} />
+                                                                        <input type="text" className="form-control" id="exampleInputtext1" onChange={(e) => setTelefone(e.target.value)} />
                                                                     </div>
 
                                                                     <div className="form-group">
                                                                         <label>Endereço</label>
-                                                                        <input type="text" className="form-control" id="inputAddress" onChange={(e) => setAddress(e.target.value)} />
+                                                                        <input type="text" className="form-control" id="inputAddress" onChange={(e) => setEndereco(e.target.value)} />
                                                                     </div>
                                                                     <div className="form-group">
                                                                         <label className="control-label">Senha</label>
                                                                         <input type="password" className="form-control" id="inputPassword" placeholder="Digite sua Senha..."
-                                                                            data-minlength="6" required onChange={(e) => setPassword(e.target.value)} />
+                                                                            data-minlength="6" required onChange={(e) => setSenha(e.target.value)} />
                                                                         <span className="help-block min">Mínimo de seis (8) digitos</span>
                                                                     </div><br />
                                                                     <button type="submit" className="btn btn-theme botaoCad">Cadastre-se</button>

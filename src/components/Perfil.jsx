@@ -27,13 +27,9 @@ function Perfil() {
                                     <a className="dropdown-item" id='logout' href="#">Logout   <i class="fa-solid fa-right-from-bracket"></i> </a>
                                 </div>
                             </div>
-
-
                         </div>
                         <div className="modal-body">
-
                             <div className="main-body">
-
                                 <div className="row gutters-sm">
                                     <div className="col-md-4 mb-3">
                                         <div className="card">
@@ -48,9 +44,6 @@ function Perfil() {
                                             </div>
                                         </div>
                                     </div>
-
-
-
                                     <div className="col-md-8">
                                         <div className="card mb-3">
                                             <div className="card-body">
@@ -60,23 +53,18 @@ function Perfil() {
                                                     </div>
                                                     <div className="col-sm-9 text-secondary">
                                                         Larissa Meirelles
-
                                                     </div>
                                                 </div>
                                                 <hr />
-
                                                 <div className="row">
                                                     <div className="col-sm-3">
                                                         <h6 className="mb-0">Gênero</h6>
                                                     </div>
                                                     <div className="col-sm-9 text-secondary">
                                                         Feminino
-
                                                     </div>
                                                 </div>
                                                 <hr />
-
-
                                                 <div className="row">
                                                     <div className="col-sm-3">
                                                         <h6 className="mb-0">Email</h6>
@@ -95,7 +83,6 @@ function Perfil() {
                                                     </div>
                                                 </div>
                                                 <hr />
-
                                                 <div className="row">
                                                     <div className="col-sm-3">
                                                         <h6 className="mb-0">Endereço</h6>
@@ -105,45 +92,100 @@ function Perfil() {
                                                     </div>
                                                 </div>
                                                 <hr />
-
                                                 <div className="row">
                                                     <div className="col-sm-3">
                                                         <h6 className="mb-0">Renda</h6>
                                                     </div>
                                                     <div className="col-sm-9 text-secondary">
                                                         R$ 10000,00
-
                                                     </div>
                                                 </div>
                                                 <hr />
                                             </div>
                                         </div>
-
-
                                     </div>
                                 </div>
-
                             </div>
-
-
-
                         </div>
-
-
-
                         <div className="modal-footer">
                             <button type="button" className=" btn btn-secondary botao" data-dismiss="modal">Fechar</button>
-
                         </div>
-
-
                     </div>
                 </div>
             </div>
-
-
         </div></div>
     )
 }
-
 export default Perfil
+
+/*
+
+<Modal.Body>
+
+<div className="col-md-4">
+    <div className="card">
+
+        <div className="d-flex flex-column align-items-center text-center">
+            <img src="https://bootdey.com/img/Content/avatar/avatar8.png" alt="Admin" className="rounded-circle img-responsive" width="150" />
+            <div className="mt-3">
+                <h4>{usuario.u_name}</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div className="col-md-6">
+    <div className="card mb-3">
+        <div className="card-body">
+            <div className="row">
+                <div className="col-sm-3">
+                    <h6 className="mb-0">Nome</h6>
+                </div>
+                <div className="col-sm-9 text-secondary">
+                    {usuario.u_name}
+                </div>
+            </div>
+            <hr />
+            <div className="row">
+                <div className="col-sm-3">
+                    <h6 className="mb-0">Email</h6>
+                </div>
+                <div className="col-sm-9 text-secondary">
+                    {usuario.u_email}
+                </div>
+            </div>
+            <hr />
+            <div className="row">
+                <div className="col-sm-3">
+                    <h6 className="mb-0">Telefone</h6>
+                </div>
+                <div className="col-sm-9 text-secondary">
+                    {usuario.u_telephone}
+                </div>
+            </div>
+            <hr />
+
+            <div className="row">
+                <div className="col-sm-3">
+                    <h6 className="mb-0">Endereço</h6>
+                </div>
+                <div className="col-sm-9 text-secondary">
+                    {usuario.u_address}
+                </div>
+            </div>
+            <hr />
+
+            <div className="row">
+                <div className="col-sm-3">
+                    <h6 className="mb-0">Renda</h6>
+                </div>
+                <div className="col-sm-9 text-secondary">
+                    R$ {usuario.u_income}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</Modal.Body>
+
+*/

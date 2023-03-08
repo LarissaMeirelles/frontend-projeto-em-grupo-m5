@@ -3,33 +3,31 @@ import { api } from '../axios/api';
 import cookie from '../axios/function';
 import Table from 'react-bootstrap/Table';
 
+
 function Extract() {
   const [spendings, setSpendings] = useState([]);
   const [loading, setLoading] = useState(true);
 
+
+
+  const getGastos = async () => {
+    const token = cookie.getCookie('token');
+    api.defaults.headers.authorization = `Bearer ${token}`;
+
+    const response = await api.get('/spendings');
+    setSpendings(response.data.result);
+
+    setLoading(false);
+  }
+
   useEffect(() => {
-    (async () => {
-      const token = cookie.getCookie('token');
-      api.defaults.headers.authorization = `Bearer ${token}`;
-
-      const response = await api.get('/spendings');
-      setSpendings(response.data.result);
-
-      setLoading(false);
-    })();
+    getGastos()
   }, []);
 
   if (loading) {
     return <div className="loading">Carregando dados...</div>;
   }
 
-  function formatISODate(dateString) {
-    const date = new Date(dateString);
-    const day = date.getDate().toString().padStart(2, '0');
-    const month = (date.getMonth() + 1).toString().padStart(2, '0');
-    const year = date.getFullYear();
-    return `${day}/${month}/${year}`;
-  }
 
   return (
     <Table striped bordered hover variant="dark">
@@ -48,7 +46,7 @@ function Extract() {
       <tbody>
           {spendings.map((spending) => (
           <tr key={spending.s_id}>
-            <td>{formatISODate(spending.s_date)}</td>
+            <td>{cookie.formatISODate(spending.s_date)}</td>
             <td>{spending.c_name}</td>
             <td>{spending.s_value}</td>
           </tr>

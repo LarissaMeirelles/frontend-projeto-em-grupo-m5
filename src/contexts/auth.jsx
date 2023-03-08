@@ -29,13 +29,16 @@ export const AuthProvider = ({children})=> {
 
         const response = await createSession(email, password)
 
-        const loggedUser = response.data.user;
+        const loggedUser = response.data.user.u_email;
+        const info = JSON.stringify(response.data.user);
+        console.log(info)
+
         const token = response.data.token
         
         
         cookie.setCookie('user', JSON.stringify(loggedUser), 1)
+        cookie.setCookie('info', info , 1)
         cookie.setCookie('token', token)
-
         api.defaults.headers.Authorization = `Bearer ${token}`
  
         

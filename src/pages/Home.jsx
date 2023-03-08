@@ -1,7 +1,7 @@
 import React from 'react'
-import Footer from '../pag inicial/Footer'
-import Mycarousel from '../pag inicial/Mycarousel'
-import Sobre from '../pag inicial/Sobre'
+import Footer from '../components/Footer'
+import Mycarousel from '../components/Mycarousel'
+import Sobre from '../components/Sobre'
 import LoginPage from './LoginPage'
 
 
@@ -10,8 +10,8 @@ function Home() {
     <div>
     <Mycarousel/>
     <Sobre/>
-   <LoginPage/>
-   <Footer/>
+    <LoginPage/>
+    <Footer/>
     </div>
   )
 }
